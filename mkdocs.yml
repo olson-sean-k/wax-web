@@ -1,0 +1,72 @@
+docs_dir: src/
+site_dir: out/site/
+
+site_name: Wax
+site_author: Sean Olson
+site_url: https://glob.guide
+
+repo_url: https://github.com/olson-sean-k/wax
+repo_name: olson-sean-k/wax
+
+nav:
+  - Home: index.md
+  - License: license.md
+  - User Guide:
+    - Syntax and Features: user-guide/syntax.md
+  - Code Guide:
+    - Glob: code-guide/glob.md
+  - Contributor Guide:
+    - Tools and Hosting: contributor-guide/tools-and-hosting.md
+  - API Documentation:
+    - Master Branch: api/wax/index.html
+    - Latest Release: https://docs.rs/wax
+
+theme:
+  favicon: img/favicon.svg
+  name: material
+  language: en
+  logo: img/wax-mono.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: deep orange
+      toggle:
+        icon: material/lightbulb-outline
+        name: Light
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: amber
+      toggle:
+        icon: material/lightbulb
+        name: Dark
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      permalink: true
+
+plugins:
+  - search:
+      lang:
+        - en
+  - minify:
+      minify_html: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/olson-sean-k
+    - icon: fontawesome/brands/mastodon
+      link: https://hachyderm.io/@olsonseank
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/olsonseank

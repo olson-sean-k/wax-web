@@ -1,0 +1,8 @@
+imports:
+  wax:
+    - out/lib
+
+git module wax:
+  url: https://github.com/olson-sean-k/wax.git
+  rev: 95d9bb3b89133eedb59eff103e0e39afbe0f43dd
+  reup: master
