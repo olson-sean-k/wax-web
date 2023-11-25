@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["GlobError","Variance"],"fn":["any","escape","is_contextual_meta_character","is_meta_character"],"mod":["prelude","walk"],"struct":["Any","BuildError","CandidatePath","CapturingToken","Glob","MatchedText"],"trait":["LocatedError","Pattern","Program"],"type":["Span"]};

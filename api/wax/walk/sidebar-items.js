@@ -1,0 +1,1 @@
+window.SIDEBAR_ITEMS = {"enum":["EntryResidue","LinkBehavior"],"struct":["FilterEntry","GlobEntry","GlobWalker","Not","TreeEntry","WalkBehavior","WalkError","WalkTree"],"trait":["Entry","FileIterator","PathExt"]};

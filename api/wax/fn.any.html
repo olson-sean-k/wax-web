@@ -1,0 +1,52 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="Constructs a combinator that matches if any of its input `Pattern`s match."><title>any in wax - Rust</title><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Regular-46f98efaafac5295.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Regular-018c141bf0843ffd.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/FiraSans-Medium-8f9a781e4970d388.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Regular-562dcc5011b6de7d.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceSerif4-Bold-a2c9cd1067f8b328.ttf.woff2"><link rel="preload" as="font" type="font/woff2" crossorigin href="../static.files/SourceCodePro-Semibold-d899c5a5c4aeb14a.ttf.woff2"><link rel="stylesheet" href="../static.files/normalize-76eba96aa4d2e634.css"><link rel="stylesheet" href="../static.files/rustdoc-deb46770fd761b69.css"><meta name="rustdoc-vars" data-root-path="../" data-static-root-path="../static.files/" data-current-crate="wax" data-themes="" data-resource-suffix="" data-rustdoc-version="1.75.0-nightly (49691b1f7 2023-10-16)" data-channel="nightly" data-search-js="search-8fbf244ebcf71464.js" data-settings-js="settings-74424d7eec62a23e.js" ><script src="../static.files/storage-fec3eaa3851e447d.js"></script><script defer src="sidebar-items.js"></script><script defer src="../static.files/main-5f34af1a0ee6bacd.js"></script><noscript><link rel="stylesheet" href="../static.files/noscript-5d8b3c7633ad77ba.css"></noscript><link rel="icon" href="https://raw.githubusercontent.com/olson-sean-k/wax/master/doc/wax-favicon.svg?sanitize=true"></head><body class="rustdoc fn"><!--[if lte IE 11]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="mobile-topbar"><button class="sidebar-menu-toggle">&#9776;</button><a class="logo-container" href="../wax/index.html"><img src="https://raw.githubusercontent.com/olson-sean-k/wax/master/doc/wax.svg?sanitize=true" alt=""></a></nav><nav class="sidebar"><div class="sidebar-crate"><a class="logo-container" href="../wax/index.html"><img src="https://raw.githubusercontent.com/olson-sean-k/wax/master/doc/wax.svg?sanitize=true" alt="logo"></a><h2><a href="../wax/index.html">wax</a><span class="version">0.6.0</span></h2></div><div class="sidebar-elems"></div></nav><main><div class="width-limiter"><nav class="sub"><form class="search-form"><span></span><input class="search-input" name="search" aria-label="Run search in the documentation" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"><div id="help-button" title="help" tabindex="-1"><a href="../help.html">?</a></div><div id="settings-menu" tabindex="-1"><a href="../settings.html" title="settings"><img width="22" height="22" alt="Change settings" src="../static.files/wheel-7b819b6101059cd0.svg"></a></div></form></nav><section id="main-content" class="content"><div class="main-heading"><h1>Function <a href="index.html">wax</a>::<wbr><a class="fn" href="#">any</a><button id="copy-path" title="Copy item path to clipboard"><img src="../static.files/clipboard-7571035ce49a181d.svg" width="19" height="18" alt="Copy item path"></button></h1><span class="out-of-band"><a class="src" href="../src/wax/lib.rs.html#964-978">source</a> · <button id="toggle-all-docs" title="collapse all docs">[<span>&#x2212;</span>]</button></span></div><pre class="rust item-decl"><code>pub fn any&lt;'t, I&gt;(patterns: I) -&gt; <a class="enum" href="https://doc.rust-lang.org/nightly/core/result/enum.Result.html" title="enum core::result::Result">Result</a>&lt;<a class="struct" href="struct.Any.html" title="struct wax::Any">Any</a>&lt;'t&gt;, <a class="struct" href="struct.BuildError.html" title="struct wax::BuildError">BuildError</a>&gt;<span class="where fmt-newline">where
+    I: <a class="trait" href="https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html" title="trait core::iter::traits::collect::IntoIterator">IntoIterator</a>,
+    I::<a class="associatedtype" href="https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html#associatedtype.Item" title="type core::iter::traits::collect::IntoIterator::Item">Item</a>: <a class="trait" href="trait.Pattern.html" title="trait wax::Pattern">Pattern</a>&lt;'t&gt;,</span></code></pre><details class="toggle top-doc" open><summary class="hideme"><span>Expand description</span></summary><div class="docblock"><p>Constructs a combinator that matches if any of its input <a href="trait.Pattern.html" title="trait wax::Pattern"><code>Pattern</code></a>s match.</p>
+<p>This function accepts an <a href="https://doc.rust-lang.org/nightly/core/iter/traits/collect/trait.IntoIterator.html" title="trait core::iter::traits::collect::IntoIterator"><code>IntoIterator</code></a> with items that implement <a href="trait.Pattern.html" title="trait wax::Pattern"><code>Pattern</code></a>, such as
+<a href="struct.Glob.html" title="struct wax::Glob"><code>Glob</code></a> and <code>&amp;str</code>. The output <a href="struct.Any.html" title="struct wax::Any"><code>Any</code></a> implements <a href="trait.Program.html" title="trait wax::Program"><code>Program</code></a> by matching its component
+<a href="trait.Program.html" title="trait wax::Program"><code>Program</code></a>s. <a href="struct.Any.html" title="struct wax::Any"><code>Any</code></a> is often more ergonomic and efficient than matching individually against
+multiple <a href="trait.Program.html" title="trait wax::Program"><code>Program</code></a>s.</p>
+<p><a href="struct.Any.html" title="struct wax::Any"><code>Any</code></a> groups all captures and therefore only exposes the complete text of a match. It is not
+possible to index a particular capturing token in the component patterns. Combinators only
+support logical matching and cannot be used to semantically match (walk) a directory tree.</p>
+<h2 id="examples"><a href="#examples">Examples</a></h2>
+<p>To match a path against multiple patterns, the patterns can first be combined into an <a href="struct.Any.html" title="struct wax::Any"><code>Any</code></a>.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>wax::{Glob, Program};
+
+<span class="kw">let </span>any = wax::any([
+    <span class="string">&quot;src/**/*.rs&quot;</span>,
+    <span class="string">&quot;tests/**/*.rs&quot;</span>,
+    <span class="string">&quot;doc/**/*.md&quot;</span>,
+    <span class="string">&quot;pkg/**/PKGBUILD&quot;</span>,
+])
+.unwrap();
+<span class="macro">assert!</span>(any.is_match(<span class="string">&quot;src/lib.rs&quot;</span>));</code></pre></div>
+<p><a href="struct.Glob.html" title="struct wax::Glob"><code>Glob</code></a>s and other compiled <a href="trait.Program.html" title="trait wax::Program"><code>Program</code></a>s can also be composed into an <a href="struct.Any.html" title="struct wax::Any"><code>Any</code></a>.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>wax::{Glob, Program};
+
+<span class="kw">let </span>red = Glob::new(<span class="string">&quot;**/red/**/*.txt&quot;</span>).unwrap();
+<span class="kw">let </span>blue = Glob::new(<span class="string">&quot;**/*blue*.txt&quot;</span>).unwrap();
+<span class="macro">assert!</span>(wax::any([red, blue]).unwrap().is_match(<span class="string">&quot;red/potion.txt&quot;</span>));</code></pre></div>
+<p>This function can only combine patterns of the same type, but intermediate combinators can be
+used to combine different types into a single combinator.</p>
+
+<div class="example-wrap"><pre class="rust rust-example-rendered"><code><span class="kw">use </span>wax::{Glob, Program};
+
+<span class="kw">let </span>glob = Glob::new(<span class="string">&quot;**/*.txt&quot;</span>)<span class="question-mark">?</span>;
+
+<span class="comment">// ...
+
+</span><span class="attr">#[rustfmt::skip]
+</span><span class="kw">let </span>any = wax::any([
+    wax::any([glob])<span class="question-mark">?</span>,
+    wax::any([
+        <span class="string">&quot;**/*.pdf&quot;</span>,
+        <span class="string">&quot;**/*.tex&quot;</span>,
+    ])<span class="question-mark">?</span>,
+])<span class="question-mark">?</span>;
+<span class="macro">assert!</span>(any.is_match(<span class="string">&quot;doc/lattice.tex&quot;</span>));</code></pre></div>
+<h2 id="errors"><a href="#errors">Errors</a></h2>
+<p>Returns an error if any of the inputs fail to build. If the inputs are a compiled <a href="trait.Program.html" title="trait wax::Program"><code>Program</code></a>
+type such as <a href="struct.Glob.html" title="struct wax::Glob"><code>Glob</code></a>, then this only occurs if the compiled program is too large.</p>
+</div></details></section></div></main></body></html>

@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"wax":[["impl Diagnostic for <a class=\"enum\" href=\"wax/enum.GlobError.html\" title=\"enum wax::GlobError\">GlobError</a>"],["impl Diagnostic for <a class=\"struct\" href=\"wax/struct.BuildError.html\" title=\"struct wax::BuildError\">BuildError</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()

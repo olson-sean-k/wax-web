@@ -1,0 +1,3 @@
+(function() {var implementors = {
+"wax":[["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/default/trait.Default.html\" title=\"trait core::default::Default\">Default</a> for <a class=\"struct\" href=\"wax/walk/struct.WalkBehavior.html\" title=\"struct wax::walk::WalkBehavior\">WalkBehavior</a>"],["impl <a class=\"trait\" href=\"https://doc.rust-lang.org/nightly/core/default/trait.Default.html\" title=\"trait core::default::Default\">Default</a> for <a class=\"enum\" href=\"wax/walk/enum.LinkBehavior.html\" title=\"enum wax::walk::LinkBehavior\">LinkBehavior</a>"]]
+};if (window.register_implementors) {window.register_implementors(implementors);} else {window.pending_implementors = implementors;}})()
